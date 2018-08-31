@@ -19,7 +19,7 @@ class CreateProductTable extends Migration
 			$table->string('sku', 6);
 			$table->decimal('price', 8, 2);
 			$table->text('description');
-			$table->integer('view_count');
+			$table->integer('view_count')->default(0);
             $table->timestamps();
         });
     }

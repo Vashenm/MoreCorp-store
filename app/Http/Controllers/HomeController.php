@@ -31,5 +31,21 @@ class HomeController extends Controller
 			}
 		}
         return view('home',compact('products'));
-    }
+	}
+	
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function view()
+    {
+		$products = Product::with("Bid")->get();
+		foreach($products as $product){
+			foreach($product->bid as $bid){
+				$bid->User;
+			}
+		}
+        return view('dashboard',compact('products'));
+	}
 }
